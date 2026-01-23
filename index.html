@@ -25,10 +25,9 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* NAV */
     nav {
       position: absolute;
       top: 30px;
@@ -44,7 +43,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* HERO */
     .hero {
       height: 100vh;
       background: linear-gradient(
@@ -66,7 +64,6 @@
       letter-spacing: 1px;
     }
 
-    /* SECTIONS */
     section {
       max-width: 1100px;
       margin: 120px auto;
@@ -81,6 +78,16 @@
       color: var(--accent);
     }
 
+    /* BIO */
+    .bio {
+      max-width: 760px;
+      font-size: 18px;
+    }
+
+    .bio p {
+      margin-bottom: 22px;
+    }
+
     /* REEL */
     .reel-wrapper {
       position: relative;
@@ -92,8 +99,7 @@
 
     .reel-wrapper iframe {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: none;
@@ -118,7 +124,6 @@
       transform: scale(1.02);
     }
 
-    /* FOOTER */
     footer {
       margin: 120px 0 40px;
       text-align: center;
@@ -130,7 +135,6 @@
       margin: 6px 0;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .hero {
         padding: 30px;
@@ -155,6 +159,7 @@
 <body>
 
   <nav>
+    <a href="#bio">Bio</a>
     <a href="#reel">Reel</a>
     <a href="#media">Media</a>
   </nav>
@@ -164,13 +169,29 @@
     <h1>Mia Grichendler</h1>
   </div>
 
+  <!-- BIO -->
+  <section id="bio">
+    <h2>Bio</h2>
+    <div class="bio">
+      <p>
+        Mia Grichendler is a French-American actress based in New York City.
+        She obtained a degree in neuroscience which led to a near three-year stint
+        working on Wall Street, before finally deciding to follow her artistic
+        passions and pursue a career in theater.
+      </p>
+      <p>
+        Ballet has always been a major component of her life, having attended
+        pre-professional ballet schools at Houston Ballet, SAB, and UNCSA.
+      </p>
+    </div>
+  </section>
+
   <!-- REEL -->
   <section id="reel">
     <h2>Reel</h2>
     <div class="reel-wrapper">
-      <!-- Replace VIDEO_ID with her YouTube ID -->
       <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID" 
+        src="https://www.youtube.com/watch?v=wgzZpjhMh0k" 
         allowfullscreen>
       </iframe>
     </div>
