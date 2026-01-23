@@ -4,84 +4,193 @@
   <meta charset="UTF-8" />
   <title>Mia Grichendler</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #f6f4f1;
+      --text: #141414;
+      --accent: #7a6c5d;
+      --muted: #8b8b8b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f8f8f8;
-      color: #111;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    header {
-      padding: 60px 40px;
-      text-align: center;
+
+    /* NAV */
+    nav {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      z-index: 10;
     }
-    h1 {
-      font-weight: 600;
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
       letter-spacing: 0.5px;
     }
-    nav {
-      margin-top: 20px;
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(
+          rgba(0,0,0,0.25),
+          rgba(0,0,0,0.25)
+        ),
+        url("images/hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 60px;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #111;
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
       font-weight: 400;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1px;
     }
+
+    /* SECTIONS */
     section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
+      max-width: 1100px;
+      margin: 120px auto;
+      padding: 0 30px;
     }
-    img {
-      max-width: 100%;
-      height: auto;
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      color: var(--accent);
     }
+
+    /* REEL */
+    .reel-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .reel-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* MEDIA GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+      transition: transform 0.4s ease;
+    }
+
+    .grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* FOOTER */
     footer {
+      margin: 120px 0 40px;
       text-align: center;
-      padding: 40px;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 30px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        right: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Mia Grichendler</h1>
-    <nav>
-      <a href="#bio">Bio</a>
-      <a href="#media">Media</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="bio">
-    <h2>Bio</h2>
-    <p>
-      Mia Grichendler is an actor represented by Stewart Talent and Bella Agency.
-      <!-- You’ll paste her bio here -->
-    </p>
+  <nav>
+    <a href="#reel">Reel</a>
+    <a href="#media">Media</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Mia Grichendler</h1>
+  </div>
+
+  <!-- REEL -->
+  <section id="reel">
+    <h2>Reel</h2>
+    <div class="reel-wrapper">
+      <!-- Replace VIDEO_ID with her YouTube ID -->
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
+  <!-- MEDIA GRID -->
   <section id="media">
     <h2>Media</h2>
-    <p>Reel coming soon.</p>
-    <!-- Headshots + reel embed go here -->
-  </section>
-
-  <section id="contact">
-    <h2>Representation</h2>
-    <p>
-      Stewart Talent<br/>
-      Bella Agency
-    </p>
+    <div class="grid">
+      <img src="images/headshot1.jpg" alt="Mia Grichendler headshot 1">
+      <img src="images/headshot2.jpg" alt="Mia Grichendler headshot 2">
+      <img src="images/headshot3.jpg" alt="Mia Grichendler headshot 3">
+      <img src="images/headshot4.jpg" alt="Mia Grichendler headshot 4">
+    </div>
   </section>
 
   <footer>
-    © Mia Grichendler
+    <p>Represented by Stewart Talent & Bella Agency</p>
+    <p>© Mia Grichendler</p>
   </footer>
+
 </body>
 </html>
-
